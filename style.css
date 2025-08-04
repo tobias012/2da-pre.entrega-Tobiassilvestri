@@ -23,6 +23,10 @@
   font-size: 20px;
 }
 
+.ocultarcheck {
+  display: none;
+}
+
 .lugar {
   width: 100%;
   height: 900px;
@@ -142,6 +146,7 @@
 .card1-1 .col1 .row1 {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 .card1-1 .col1 .row1 .card1 {
   padding: 15px;
@@ -173,33 +178,32 @@
   justify-content: center;
 }
 
-footer div {
+footer .footer1 {
+  background-color: rgb(0, 90, 150);
+  color: whitesmoke;
   display: flex;
-  flex-direction: row;
+  justify-content: center;
+  padding: 40px 20px;
+  gap: 40px;
 }
-footer ul li {
+footer .footer1 .footer-inicio,
+footer .footer1 .contacto {
+  flex: 1;
+}
+footer .footer1 ul {
   list-style: none;
-  margin: 10px;
+  padding: 0;
 }
-footer ul li a {
+footer .footer1 ul li {
+  margin: 10px 0;
+  color: whitesmoke;
+}
+footer .footer1 ul li a {
   color: whitesmoke;
   text-decoration: none;
 }
-footer .footer1 {
-  color: whitesmoke;
-  background-color: rgb(0, 90, 150);
-  display: flex;
-  justify-content: center;
-}
-footer .footer1 .footer-inicio {
-  width: 70%;
-  max-width: 1200px;
-  padding-top: 40px;
-  display: flex;
-  flex-direction: row;
-}
-footer .footer1 .contacto {
-  padding-top: 40px;
+footer .footer1 ul li a:hover {
+  text-decoration: underline;
 }
 
 .text-subtitulos {
@@ -263,132 +267,87 @@ footer .footer1 .contacto {
   border-radius: 6px;
 }
 
-
-.mostrar-menu {
-  color: rgb(0, 90, 150);
-  font-size: 30px;
-  cursor: pointer;
-  display: none;
-  transition: 0,4s;
-}
-
-.esconder-menu {
-  color: white;
-  font-size: 30px;
-  cursor: pointer;
-  display: none;
-  transition: 0,4s;
-}
-
-.mostrar-menu {
-  order: 1;
-}
-
-#check {
-  display: none;
-}
-
-
-@media (max-width: 576px) {
-  .mostrar-menu,
-  .esconder-menu {
-    display: block;
-  }
-
-  .ocultarcheck {
-    display: none;
-  }
-  
-  .res-nav {
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    right: -100%;
-    top: 0;
-    text-align: center;
-    padding: 100px 0px;
-    z-index: 100;
-    transition: 0,8s;
-  } 
-  
-  .res-nav li a {
-    color: white;
-  }
-
-  .esconder-menu {
-    position: absolute;
-    top: 40px;
-    right: 40px;
-  }
-
-  .mostrar-menu {
-    position: absolute;
-    top: 40px;
-    right: 40px;
-  }
-
-  #check:checked ~ .res-nav{
-    right: 0;
-  }
-
-}
-
 @media (max-width: 768px) {
-  .mostrar-menu,
+  .mostrar-menu {
+    display: block;
+    color: rgb(0, 90, 150);
+  }
   .esconder-menu {
     display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: rgb(0, 90, 150);
+    cursor: pointer;
+    user-select: none;
   }
-
   .res-nav {
     position: fixed;
-    width: 100%;
-    height: 100vh;
-    background-color: rgb(0, 90, 150);
-    right: -100%;
     top: 0;
-    text-align: center;
-    padding: 100px 0px;
-    z-index: 100;
-    transition: 0,8s;
-  }
-
-  .res-nav2 {
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    background-color: rgb(0, 90, 150);
     right: -100%;
-    top: 0;
-    text-align: center;
-    padding: 100px 0px;
-    z-index: 100;
-    transition: 0,8s;
-  }
-
-  .res-nav2 {
-    color: white;
+    width: 60%;
+    height: 100%;
+    background: white;
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    transition: right 0.3s ease;
+    z-index: 3000;
   }
-
-  .esconder-menu {
-    position: absolute;
-    top: 40px;
-    right: 40px;
-  }
-
-  .mostrar-menu {
-    color: rgb(0, 90, 150);
-    position: absolute;
-    top: 40px;
-    right: 40px;
-  }
-
-  #check:checked ~ .res-nav{
+  #check:checked ~ .res-nav {
     right: 0;
   }
+  .res-nav2 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .card1-1 .col1 .row1 .card1 {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+footer .footer1 {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+footer .footer1 .footer-inicio,
+footer .footer1 .contacto {
+  width: 100%;
+}
+footer .footer1 ul li {
+  margin: 6px 0;
+}
 
+@media (max-width: 1024px) {
+  .img-muestras {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .img-muestras .img,
+  .img-muestras .img2 {
+    width: 45%;
+    height: auto;
+  }
+  .formulario {
+    grid-template-columns: 1fr;
+  }
+  .foto-serv {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .foto-serv .pic-serv {
+    width: 70%;
+    height: auto;
+  }
+}
+@media (min-width: 769px) {
+  .mostrar-menu,
+  .esconder-menu {
+    display: none !important;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

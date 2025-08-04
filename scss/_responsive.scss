@@ -1,0 +1,98 @@
+@media (max-width: 768px) {
+  .mostrar-menu {
+    display: block;
+    color: rgb(0, 90, 150);
+  }
+
+  .esconder-menu {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: rgb(0, 90, 150);
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .res-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 60%;
+    height: 100%;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: right 0.3s ease;
+    z-index: 3000;
+  }
+
+  #check:checked ~ .res-nav {
+    right: 0;
+  }
+
+  .res-nav2 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .card1-1 .col1 .row1 .card1 {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+   footer {
+    .footer1 {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      .footer-inicio,
+      .contacto {
+        width: 100%;
+      }
+
+      ul li {
+        margin: 6px 0;
+      }
+    }
+  }
+
+
+
+@media (max-width: 1024px) {
+  .img-muestras {
+    display: flex;
+    flex-wrap: wrap;
+
+    .img,
+    .img2 {
+      width: 45%;
+      height: auto;
+    }
+  }
+
+  .formulario {
+    grid-template-columns: 1fr;
+  }
+
+  .foto-serv {
+    display: flex;
+    flex-wrap: wrap;
+
+    .pic-serv {
+      width: 70%;
+      height: auto;
+    }
+  }
+}
+
+@media (min-width: 769px) {
+  .mostrar-menu,
+  .esconder-menu {
+    display: none !important;
+  }
+}

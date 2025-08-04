@@ -17,6 +17,7 @@
         .row1 {
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
             .card1 {
                 padding: 15px;
                 border-radius: 20px;
